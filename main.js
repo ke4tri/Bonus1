@@ -44,5 +44,19 @@ const people = [
           death: 1798
         }
     },
-
     ]
+    
+    const createProjectCards = () => {
+        let newString = '';
+        for(i=0;i<people.length;i++){
+            newString += `<div id="person${[i]}"</h3>`;
+            newString +=    `<h3>Title: ${people[i]["title"]}</h3>`;
+            newString +=    `<h3>Name: ${people[i]["name"]}</h3>`;
+            newString +=    `<h3>Bio: ${people[i].bio}</h3>`;
+            newString +=    `<h3>Birth: ${people[i].lifespan.birth}</h3>`;
+            newString +=    `<h3>Death: ${people[i].lifespan.death}</h3></div>`;
+            // newString += `</div>`;
+        };
+        printToDom(newString, "containWrap")
+    };
+    createProjectCards();
