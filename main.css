@@ -6,10 +6,15 @@
     
 }
 
+.color {
+    
+}
+
 #person0{
     border: black solid 1px;
     max-width: 200px;
     padding:50px;
+    
 }
 
 #person1{
