@@ -49,14 +49,34 @@ const people = [
     const createProjectCards = () => {
         let newString = '';
         for(i=0;i<people.length;i++){
-            newString += `<div id="person${[i]}"</h3>`;
+           
+            newString += `<div id="person${[i]}" class="personAll"</h3>`;
             newString +=    `<h3>Title: ${people[i]["title"]}</h3>`;
             newString +=    `<h3>Name: ${people[i]["name"]}</h3>`;
             newString +=    `<h3>Bio: ${people[i].bio}</h3>`;
             newString +=    `<h3>Birth: ${people[i].lifespan.birth}</h3>`;
             newString +=    `<h3>Death: ${people[i].lifespan.death}</h3></div>`;
-            // newString += `</div>`;
+            // image
+           
         };
         printToDom(newString, "containWrap")
+        for(i=0;i<people.length;i++){
+            let tom = `person${i}`;
+            if(i % 2 === 1) {
+
+                document.getElementById(tom).style.background = "lightblue";
+
+            }
+            else{ document.getElementById(tom).style.background = "lightyellow";
+
+            }
+    };
     };
     createProjectCards();
+
+// const oddColor = () => {
+    
+// };
+
+//     oddColor();
+    
