@@ -1,0 +1,31 @@
+#containWrap{
+   
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+}
+
+#person0{
+    border: black solid 1px;
+    max-width: 200px;
+    padding:50px;
+}
+
+#person1{
+    border: black solid 1px;
+    max-width: 200px;
+    padding:50px;
+}
+
+#person2{
+    border: black solid 1px;
+    max-width: 200px;
+    padding:50px;
+}
+
+#person3{
+    border: black solid 1px;
+    max-width: 200px;
+    padding:50px;
+}
