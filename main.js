@@ -51,13 +51,13 @@ const people = [
         for(i=0;i<people.length;i++){
            
             newString += `<div id="person${[i]}" class="personAll"</h3>`;
-            newString +=    `<h3>Title: ${people[i]["title"]}</h3>`;
+            newString +=    `<h3 class>Title: ${people[i]["title"]}</h3>`;
             newString +=    `<h3>Name: ${people[i]["name"]}</h3>`;
             newString +=    `<h3>Bio: ${people[i].bio}</h3>`;
             newString +=    `<h3>Birth: ${people[i].lifespan.birth}</h3>`;
-            newString +=    `<h3>Death: ${people[i].lifespan.death}</h3></div>`;
-            // image
-           
+            newString +=    `<h3>Death: ${people[i].lifespan.death}</h3>`;
+            newString +=    `<img src="${people[i].image}">`
+            newString +=  `</div>`
         };
         printToDom(newString, "containWrap")
         for(i=0;i<people.length;i++){
@@ -83,3 +83,12 @@ const people = [
         function getFocus() {
             document.getElementById("tomtom").focus();
          }
+
+
+
+         let outputEl = document.getElementById("containWrap")
+         let inputKey = document.getElementById("tomtom");
+
+        fieldEl.addEventListener("keyup", function (event) {
+            outputEl.innerHTML = event.target.value
+        })
