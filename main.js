@@ -63,20 +63,21 @@ const people = [
         for(i=0;i<people.length;i++){
             let tom = `person${i}`;
             if(i % 2 === 1) {
-
                 document.getElementById(tom).style.background = "lightblue";
-
             }
             else{ document.getElementById(tom).style.background = "lightyellow";
-
             }
     };
+
     };
     createProjectCards();
 
-// const oddColor = () => {
-    
-// };
-
-//     oddColor();
-    
+// need a funciton name
+    for(i=0;i<people.length;i++){
+        let bob = `person${i}`;
+        document.getElementById(bob).addEventListener("click", function() {
+            document.getElementById(bob).style.border = "dotted";
+        });
+        }
+ 
+ 
