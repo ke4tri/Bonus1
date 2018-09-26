@@ -53,7 +53,7 @@ const people = [
             newString += `<div id="person${[i]}" class="personAll"</h3>`;
             newString +=    `<h3 class>Title: ${people[i]["title"]}</h3>`;
             newString +=    `<h3>Name: ${people[i]["name"]}</h3>`;
-            newString +=    `<h3>Bio: ${people[i].bio}</h3>`;
+            newString +=    `<h3 id="bio${[i]}">Bio: ${people[i].bio}</h3>`;
             newString +=    `<h3>Birth: ${people[i].lifespan.birth}</h3>`;
             newString +=    `<h3>Death: ${people[i].lifespan.death}</h3>`;
             newString +=    `<img src="${people[i].image}">`
@@ -79,16 +79,20 @@ const people = [
             document.getElementById(bob).style.border = "dotted";
         });
         }
- 
         function getFocus() {
             document.getElementById("tomtom").focus();
          }
+         S
 
+         function bioChange(bio) {
+            let outputEl = document.getElementById(bio)
+            let fieldEl = document.getElementById("tomtom");
+            fieldEl.addEventListener("keyup", function (event) {
+                outputEl.innerHTML = event.target.value
+             })
+         };
+         document.getElementById("bio0").addEventListener("click",function(){ bioChange("bio0")});
+         document.getElementById("bio1").addEventListener("click", function(){ bioChange("bio1")});
+         document.getElementById("bio2").addEventListener("click", function(){ bioChange("bio2")});
 
-
-         let outputEl = document.getElementById("containWrap")
-         let inputKey = document.getElementById("tomtom");
-
-        fieldEl.addEventListener("keyup", function (event) {
-            outputEl.innerHTML = event.target.value
-        })
+         document.getElementById("bio3").addEventListener("click", function(){ bioChange("bio3")});
