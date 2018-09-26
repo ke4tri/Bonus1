@@ -80,4 +80,6 @@ const people = [
         });
         }
  
- 
+        function getFocus() {
+            document.getElementById("tomtom").focus();
+         }
