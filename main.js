@@ -85,6 +85,11 @@ function getFocus() {
     document.getElementById("inputField").focus();
     }
 
+// function clearInput(){
+//     document.getElementById(Enter).onkeydown = 
+//     document.getElementById("inputField").value = ' ';
+// }
+
 // CHANGES THE BIO VIA THE INPUT   S
 function bioChange(bio) {
 document.getElementById("inputField").value = '';
