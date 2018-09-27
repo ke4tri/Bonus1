@@ -46,53 +46,57 @@ const people = [
     },
     ]
     
-    const createProjectCards = () => {
-        let newString = '';
-        for(i=0;i<people.length;i++){
-           
-            newString += `<div id="person${[i]}" class="personAll"</h3>`;
-            newString +=    `<h3 class>Title: ${people[i]["title"]}</h3>`;
-            newString +=    `<h3>Name: ${people[i]["name"]}</h3>`;
-            newString +=    `<h3 id="bio${[i]}">Bio: ${people[i].bio}</h3>`;
-            newString +=    `<h3>Birth: ${people[i].lifespan.birth}</h3>`;
-            newString +=    `<h3>Death: ${people[i].lifespan.death}</h3>`;
-            newString +=    `<img src="${people[i].image}">`
-            newString +=  `</div>`
-        };
-        printToDom(newString, "containWrap")
-        for(i=0;i<people.length;i++){
-            let tom = `person${i}`;
-            if(i % 2 === 1) {
-                document.getElementById(tom).style.background = "lightblue";
-            }
-            else{ document.getElementById(tom).style.background = "lightyellow";
-            }
-    };
-
-    };
-    createProjectCards();
-
-// need a funciton name
+const createProjectCards = () => {
+    let newString = '';
     for(i=0;i<people.length;i++){
-        let bob = `person${i}`;
-        document.getElementById(bob).addEventListener("click", function() {
-            document.getElementById(bob).style.border = "dotted";
-        });
+        
+        newString += `<div id="person${[i]}" class="personAll"</h3>`;
+        newString +=    `<h3 class>Title: ${people[i]["title"]}</h3>`;
+        newString +=    `<h3>Name: ${people[i]["name"]}</h3>`;
+        newString +=    `<h3 id="bio${[i]}">Bio: ${people[i].bio}</h3>`;
+        newString +=    `<h3>Birth: ${people[i].lifespan.birth}</h3>`;
+        newString +=    `<h3>Death: ${people[i].lifespan.death}</h3>`;
+        newString +=    `<img src="${people[i].image}">`
+        newString +=  `</div>`
+    };
+    printToDom(newString, "containWrap")
+    for(i=0;i<people.length;i++){
+        let tom = `person${i}`;
+        if(i % 2 === 1) {
+            document.getElementById(tom).style.background = "lightblue";
         }
-        function getFocus() {
-            document.getElementById("tomtom").focus();
-         }
-         S
+        else{ document.getElementById(tom).style.background = "lightyellow";
+        }
+};
 
-         function bioChange(bio) {
-            let outputEl = document.getElementById(bio)
-            let fieldEl = document.getElementById("tomtom");
-            fieldEl.addEventListener("keyup", function (event) {
-                outputEl.innerHTML = event.target.value
-             })
-         };
-         document.getElementById("bio0").addEventListener("click",function(){ bioChange("bio0")});
-         document.getElementById("bio1").addEventListener("click", function(){ bioChange("bio1")});
-         document.getElementById("bio2").addEventListener("click", function(){ bioChange("bio2")});
+};
+createProjectCards();
 
-         document.getElementById("bio3").addEventListener("click", function(){ bioChange("bio3")});
+//  SHOULD BE IN A FUNCTION
+for(i=0;i<people.length;i++){
+    let bob = `person${i}`;
+    document.getElementById(bob).addEventListener("click", function() {
+        document.getElementById(bob).style.border = "dotted";
+    });
+}
+
+// GETS FOCUS ON DIV CLICK
+function getFocus() {
+    document.getElementById("inputField").focus();
+    }
+
+// CHANGES THE BIO VIA THE INPUT   S
+function bioChange(bio) {
+document.getElementById("inputField").value = '';
+outputEl = document.getElementById(bio)
+let fieldEl = document.getElementById("inputField");
+fieldEl.addEventListener("keyup", function (event) {
+    outputEl.innerHTML = event.target.value
+    })
+};
+
+// CALLS THE FUNCTION OF THE BIO INPUT CHANGE
+document.getElementById("bio0").addEventListener("click", function(){ bioChange("bio0")});
+document.getElementById("bio1").addEventListener("click", function(){ bioChange("bio1")});
+document.getElementById("bio2").addEventListener("click", function(){ bioChange("bio2")});
+document.getElementById("bio3").addEventListener("click", function(){ bioChange("bio3")});
