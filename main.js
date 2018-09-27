@@ -2,7 +2,7 @@ const printToDom = (stringToPrint, divId) => {
     const selectedDiv = document.getElementById(divId);
     selectedDiv.innerHTML += stringToPrint;
 };
-
+pressedEnter()
 const people = [
     {
         title: "Samurai1",
@@ -49,7 +49,6 @@ const people = [
 const createProjectCards = () => {
     let newString = '';
     for(i=0;i<people.length;i++){
-        
         newString += `<div id="person${[i]}" class="personAll"</h3>`;
         newString +=    `<h3 class>Title: ${people[i]["title"]}</h3>`;
         newString +=    `<h3>Name: ${people[i]["name"]}</h3>`;
@@ -68,10 +67,8 @@ const createProjectCards = () => {
         else{ document.getElementById(tom).style.background = "lightyellow";
         }
 };
-
 };
 createProjectCards();
-
 //  SHOULD BE IN A FUNCTION
 for(i=0;i<people.length;i++){
     let bob = `person${i}`;
@@ -79,16 +76,12 @@ for(i=0;i<people.length;i++){
         document.getElementById(bob).style.border = "dotted";
     });
 }
-
 // GETS FOCUS ON DIV CLICK
 function getFocus() {
     document.getElementById("inputField").focus();
     }
 
-// function clearInput(){
-//     document.getElementById(Enter).onkeydown = 
-//     document.getElementById("inputField").value = ' ';
-// }
+   
 
 // CHANGES THE BIO VIA THE INPUT   S
 function bioChange(bio) {
@@ -98,6 +91,7 @@ let fieldEl = document.getElementById("inputField");
 fieldEl.addEventListener("keyup", function (event) {
     outputEl.innerHTML = event.target.value
     })
+    
 };
 
 // CALLS THE FUNCTION OF THE BIO INPUT CHANGE
@@ -105,3 +99,14 @@ document.getElementById("bio0").addEventListener("click", function(){ bioChange(
 document.getElementById("bio1").addEventListener("click", function(){ bioChange("bio1")});
 document.getElementById("bio2").addEventListener("click", function(){ bioChange("bio2")});
 document.getElementById("bio3").addEventListener("click", function(){ bioChange("bio3")});
+
+// <input id="myInput" value="Some text..">
+// <button id="myBtn" onclick="javascript:alert('Hello World!')">Button</button>
+
+
+function pressedEnter() {
+    document.getElementById('form').addEventListener('submit', function() {
+        event.preventDefault();
+        document.getElementById('inputField').value = '';
+    })
+}
