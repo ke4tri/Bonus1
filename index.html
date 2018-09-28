@@ -9,13 +9,16 @@
 </head>
 <body>
     <form id="form">
-    <div id="newDiv"></div>
-        <input type="text" id="inputField" onfocus="this.value=''"" placeholder="Type something Here">
-    </div>
-    </form>
-    <div id="containWrap" onclick=getFocus();>
-    </div>
 
+        <div id="newDiv"></div>
+            <input type="text" id="inputField" onfocus="this.value=''" placeholder="Type something Here">
+        </div>
+
+        <input id="clearBut" type="button" name="reset_form" value="Reset Form" onclick="this.form.reset();">
+        <div id="containWrap" onclick=getFocus();>
+            </div>
+    </form>
+    
 <script src="main.js"></script>
 </body>
 </html>

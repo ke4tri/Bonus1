@@ -2,7 +2,7 @@ const printToDom = (stringToPrint, divId) => {
     const selectedDiv = document.getElementById(divId);
     selectedDiv.innerHTML += stringToPrint;
 };
-pressedEnter()
+// pressedEnter()
 const people = [
     {
         title: "Samurai1",
@@ -71,9 +71,9 @@ const createProjectCards = () => {
 createProjectCards();
 //  SHOULD BE IN A FUNCTION
 for(i=0;i<people.length;i++){
-    let bob = `person${i}`;
-    document.getElementById(bob).addEventListener("click", function() {
-        document.getElementById(bob).style.border = "dotted";
+    let personDot = `person${i}`;
+    document.getElementById(personDot).addEventListener("click", function() {
+        document.getElementById(personDot).style.border = "dotted";
     });
 }
 // GETS FOCUS ON DIV CLICK
@@ -81,17 +81,14 @@ function getFocus() {
     document.getElementById("inputField").focus();
     }
 
-   
-
-// CHANGES THE BIO VIA THE INPUT   S
+// CHANGES THE BIO VIA THE INPUT   
 function bioChange(bio) {
 document.getElementById("inputField").value = '';
 outputEl = document.getElementById(bio)
 let fieldEl = document.getElementById("inputField");
-fieldEl.addEventListener("keyup", function (event) {
+fieldEl.addEventListener("keypress", function (event) {
     outputEl.innerHTML = event.target.value
     })
-    
 };
 
 // CALLS THE FUNCTION OF THE BIO INPUT CHANGE
@@ -100,13 +97,22 @@ document.getElementById("bio1").addEventListener("click", function(){ bioChange(
 document.getElementById("bio2").addEventListener("click", function(){ bioChange("bio2")});
 document.getElementById("bio3").addEventListener("click", function(){ bioChange("bio3")});
 
-// <input id="myInput" value="Some text..">
-// <button id="myBtn" onclick="javascript:alert('Hello World!')">Button</button>
+// CLEARS INPUT FIELD AFTER HITTING ENTER
+// function pressedEnter() {
+//     document.getElementById('inputField').addEventListener('Enter', function() {
+//     event.preventDefault();
+//     document.getElementById('inputField').value = '';
+   
+//     })
+// }
+
+document.getElementById('inputField').addEventListener('keypress', function (e) {
+    if (e.keyCode === 13) {
+        e.preventDefault();
+        document.getElementById("clearBut").click();
+        // document.getElementById("clearBut").form.reset();
+        
+    }
+});
 
 
-function pressedEnter() {
-    document.getElementById('form').addEventListener('submit', function() {
-        event.preventDefault();
-        document.getElementById('inputField').value = '';
-    })
-}
