@@ -109,15 +109,10 @@ document.getElementById("bio3").addEventListener("click", function(){ bioChange(
 document.getElementById('inputField').addEventListener('keypress', function (e) {
     if (e.keyCode === 13) {
         e.preventDefault();
-        console.log('print thid');
+        document.getElementById("clearBut").click();
+        // document.getElementById("clearBut").form.reset();
         
-        // document.getElementById('inputField').value = '';
     }
 });
 
-// for(i=0;i<people.length;i++){
-//     let personDot = `person${i}`;
-//     document.getElementById(personDot).addEventListener("click", function() {
-//         document.getElementById(personDot).style.border = "dotted";
-//     });
-// }
+
