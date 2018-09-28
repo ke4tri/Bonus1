@@ -88,7 +88,7 @@ outputEl = document.getElementById(bio)
 let fieldEl = document.getElementById("inputField");
 fieldEl.addEventListener("keypress", function (event) {
     outputEl.innerHTML = event.target.value
-    })
+})
 };
 
 // CALLS THE FUNCTION OF THE BIO INPUT CHANGE
@@ -97,22 +97,10 @@ document.getElementById("bio1").addEventListener("click", function(){ bioChange(
 document.getElementById("bio2").addEventListener("click", function(){ bioChange("bio2")});
 document.getElementById("bio3").addEventListener("click", function(){ bioChange("bio3")});
 
-// CLEARS INPUT FIELD AFTER HITTING ENTER
-// function pressedEnter() {
-//     document.getElementById('inputField').addEventListener('Enter', function() {
-//     event.preventDefault();
-//     document.getElementById('inputField').value = '';
+// CLEARING TEXT FIELD WHEN PRESSING ENTER
    
-//     })
-// }
-
-document.getElementById('inputField').addEventListener('keypress', function (e) {
-    if (e.keyCode === 13) {
-        e.preventDefault();
-        document.getElementById("clearBut").click();
-        // document.getElementById("clearBut").form.reset();
-        
+document.getElementById('inputField').addEventListener('keyup', (event) => {
+    if (event.key === 'Enter') {
+      event.target.value = '';
     }
 });
-
-
