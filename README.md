@@ -4,7 +4,7 @@ This project was a road for working with more eventlistners.
 
 ## Screenshots
 
-![Screen Shot]()
+![Screen Shot](https://github.com/ke4tri/Bonus1/blob/master/bonus_ScreenShot.JPG)
 ## How to run this project
 * Use npm to install http-server in your terminal:
 ```sh
